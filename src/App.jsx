@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar";
+import "./components/estilos.css"
 const App = () => {
     return(
         <header>
