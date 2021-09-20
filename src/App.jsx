@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import "./components/estilos.css"
 import CartWidget from "./components/CartWidget";
+import { ItemCount } from "./components/ItemCount"
 import ItemListContainer from "./components/ItemListContainer";
 
 
@@ -9,13 +10,13 @@ const App = () => {
         
         <>
         <header>
-            <p>MOCCA BASICS</p>
+            <p className="marca">MOCCA BASICS</p>
             <CartWidget />
             <NavBar />
-            <ItemListContainer titulo="Bienvenido a Mocca Basics!" />
+            <ItemListContainer titulo="Encontrá todo lo que estás buscando!"/>
         </header>
         <div>
-        <ItemListContainer titulo="Bienvenido a Mocca Basics!" />
+        <ItemCount />
         </div></>
         
     

@@ -1,5 +1,5 @@
 
-p{
+.marca{
     color: saddlebrown;
     font-family: sans-serif;
     display: inline-block;
@@ -10,7 +10,7 @@ body nav div{
     background-color: rgb(182, 147, 103);
     width: 100%;
     height: 50px;
-    position: fixed;
+    
 }
 
 body nav div a{
@@ -22,19 +22,39 @@ body nav div a{
     padding-left: 115px;
 }
 
-span{
-    padding-left: 180px;
+.titulo{
+    font-size: 30px;
+    color: saddlebrown;
     padding-top: 20px;
-    
+    padding-left: 420px;
 }
 
 .material-icons{
+    padding-left: 180px;
+    padding-top: 20px;
+    color: rgb(182, 147, 103);
     font-size: 50px;
+    
 }
 
-.titulo{
-    font-size: 30px;
-    color: rgb(158, 109, 74);
-    padding-top: 20px;
-    padding-left: 500px;
+.card-body{
+    background-color: rgb(182, 147, 103);
 }
+
+.card-title{
+    color: thistle;
+}
+
+.card-text{
+    color: thistle;
+}
+
+.valor{
+    padding: 20px;
+    color: thistle;
+}
+
+.btn{
+    color: saddlebrown;
+}
+

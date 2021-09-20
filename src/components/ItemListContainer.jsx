@@ -1,3 +1,4 @@
+import "./estilos.css"
 
 const ItemListContainer = ({titulo}) => {
     return (
