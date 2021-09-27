@@ -4,6 +4,7 @@ import CartWidget from "./components/CartWidget";
 import { ItemCount } from "./components/ItemCount"
 import ItemListContainer from "./components/ItemListContainer";
 import { useState } from "react";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
             <CartWidget />
             <NavBar />
             <ItemListContainer />
+            <ItemDetailContainer />
         </header>
         </>
         

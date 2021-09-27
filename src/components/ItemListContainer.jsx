@@ -3,11 +3,12 @@ import {useEffect, useState} from "react"
 import ItemList from "./ItemList";
 
 const productosIniciales = [
-    {titulo: "Prod 1", precio: 2500}, 
-    {titulo: "Prod 2", precio: 3000}
+    {titulo: "Camisa Mykonos", precio: 3500}, 
+    {titulo: "Blusa Santorini", precio: 3000}
 ]
 const ItemListContainer = () => {
     const [productos,setProductos] = useState([])
+    
     
 
     useEffect(()=>{
