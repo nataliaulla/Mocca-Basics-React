@@ -7,6 +7,8 @@ import { useState } from "react";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
 
+
+
 const App = () => {
     return(
         
@@ -17,6 +19,7 @@ const App = () => {
             <NavBar />
             <ItemListContainer />
             <ItemDetailContainer />
+               
         </header>
         </>
         
