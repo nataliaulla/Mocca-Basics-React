@@ -1,5 +1,6 @@
 
 import React, { useEffect , useState } from "react"
+import ItemDetail from "./ItemDetail"
 
 const itemInicial = [{
         descripcion: "Camisa denim azul, modelo oversize corta",
