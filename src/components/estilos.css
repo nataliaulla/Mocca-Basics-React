@@ -1,26 +1,17 @@
 
 .marca{
-    color: saddlebrown;
+    color: rgb(182, 147, 103);
     font-family: sans-serif;
-    display: inline-block;
-    padding-left: 35%;
     font-size: 50px;
 }
 body nav div{
-    background-color: rgb(182, 147, 103);
-    width: 100%;
-    height: 50px;
+    background-color: rgb(207, 199, 199);
+    
+    
     
 }
 
-body nav div a{
-    color: thistle;
-    font-family: sans-serif;
-    text-decoration: none;
-    display: inline-block;
-    padding: 15px;
-    padding-left: 115px;
-}
+
 
 .titulo{
     font-size: 30px;
@@ -30,15 +21,15 @@ body nav div a{
 }
 
 .material-icons{
-    padding-left: 180px;
-    padding-top: 20px;
-    color: rgb(182, 147, 103);
-    font-size: 50px;
     
+    color: black;
+    font-size: 30px;
+   
 }
 
 .card-body{
     background-color: rgb(182, 147, 103);
+    
 }
 
 .card-title{

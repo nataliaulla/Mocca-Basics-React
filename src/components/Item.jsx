@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const Item = ({producto}) => {
     return (
@@ -7,8 +8,11 @@ const Item = ({producto}) => {
                 
                     <div className="card-body">
                         <h5 className="card-title">{producto.titulo} - ${producto.precio}</h5>
-                        <p className="card-text">Camisa de jean oversize</p>
+                        <p className="card-text"></p>
                         <a className="btn btn-light" >Agregar!</a>
+                        <Link to="/item/Mykonos">
+                        <a className="btn btn-light" >Ver detalles</a>
+                        </Link>
                         
                         </div>
                     </div>

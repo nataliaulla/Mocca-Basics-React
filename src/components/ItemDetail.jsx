@@ -7,7 +7,7 @@ const ItemDetail = ({item}) => {
                      <img src={item.PictureUrl}></img>
                      <div className="card-body">
                          <p className="card-text">{item.descripcion}</p>
-                         <p className="card-text">{item.precio}</p>
+                         <p className="card-text">${item.precio}</p>
                          
                          
                          </div>
