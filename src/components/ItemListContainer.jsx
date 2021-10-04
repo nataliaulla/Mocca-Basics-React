@@ -4,16 +4,16 @@ import ItemList from "./ItemList"
 import { useParams } from "react-router"
 
 const productosIniciales = [
-    {titulo: "Camisa Mykonos", precio: 3500}, 
-    {titulo: "Blusa Santorini", precio: 3000},
-    {titulo: "Camisa Rodas", precio: 2800},
-    {titulo: "Sobrecamisa Milos", precio: 5500}
+    {id: "1", titulo: "Camisa Mykonos", precio: 3500, Catalogo: "Mocca"}, 
+    {id: "2", titulo: "Blusa Santorini", precio: 3000, Catalogo:"Sale"},
+    {id: "3", titulo: "Camisa Rodas", precio: 2800, Catalogo: "Mocca"},
+    {id: "4", titulo: "Sobrecamisa Milos", precio: 5500, Catalogo:"Sale"}
 ]
 const ItemListContainer = () => {
     const [productos,setProductos] = useState([])
-    const parametros = useParams()
+    const { id }= useParams()
 
-    console.log (parametros)
+    
     
     
 
@@ -24,11 +24,19 @@ const ItemListContainer = () => {
             },2000)
         })
 
-        mock_async
-        .then((resultado)=>{
-            setProductos(resultado)
+        if(id){
+            mock_async.then(data=>{
+                setProductos(data.filter(item=>item.Catalogo===id))
+            })
+        }else{
+            mock_async
+            .then((resultado)=>{
+                setProductos(resultado)
+    
+            })  
+        }
 
-        })
+       
     })
 
     if(productos.length > 0){

@@ -1,13 +1,15 @@
+import ItemDetailContainer from "./ItemDetailContainer"
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({producto}) => {
     return (
         <>
         <div>
              <div className="card mt-5 ms-5" style={{width:"18rem"}}>
-                     <img src={item.PictureUrl}></img>
+                     
                      <div className="card-body">
-                         <p className="card-text">{item.descripcion}</p>
-                         <p className="card-text">${item.precio}</p>
+                         <p className="card-text">{producto.titulo}</p>
+                         <p className="card-text">{producto.descripcion}</p>
+                         <p className="card-text">${producto.precio}</p>
                          
                          
                          </div>
