@@ -15,7 +15,7 @@ const NavBar = () => {
         <Navbar>
             <Container fluid>
                 <Brand>
-                <Link to="/"><h1 className="marca">Mocca Basics</h1></Link>
+                <Link to="/"><img className="logo" src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/297/506/themes/common/logo-324512806-1596577499-bb675bdd0e422da396048036b0675fb01596577499-320-0.png?0"></img></Link>
                 </Brand>
                 <Nav>
                     <Item>

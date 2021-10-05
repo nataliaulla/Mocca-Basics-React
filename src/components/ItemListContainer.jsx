@@ -4,10 +4,10 @@ import ItemList from "./ItemList"
 import { useParams } from "react-router"
 
 const productosIniciales = [
-    {id: "1", titulo: "Camisa Mykonos", precio: 3500, Catalogo: "Mocca"}, 
-    {id: "2", titulo: "Blusa Santorini", precio: 3000, Catalogo:"Sale"},
-    {id: "3", titulo: "Camisa Rodas", precio: 2800, Catalogo: "Mocca"},
-    {id: "4", titulo: "Sobrecamisa Milos", precio: 5500, Catalogo:"Sale"}
+    {id: "1", titulo: "Camisa Milos", precio: 3500, Catalogo: "Mocca", descripcion: "Camisa Denim corta, tipo oversize", foto: "https://enede.com.ar/shop/16622-medium_default/camisa-sora.jpg"}, 
+    {id: "2", titulo: "Blusa Santorini", precio: 3000, Catalogo:"Sale", descripcion: "Blusa lino, asimetrica, nudo central", foto:"https://d3ugyf2ht6aenh.cloudfront.net/stores/001/536/681/products/_mg_80641-553ae3a2d345388fa116321554683574-1024-1024.jpg"},
+    {id: "3", titulo: "Camisa Naxos", precio: 2800, Catalogo: "Mocca", descripcion: "Camisa poplin, corta", foto: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/536/681/products/sh-foryou-9271-b24ce0c055269fc03316273192088429-1024-1024.jpg"},
+    {id: "4", titulo: "Blusa Santorini", precio: 5500, Catalogo:"Sale", descripcion: "Blusa lino, asimetrica, nudo central", foto: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/536/681/products/_mg_80781-0c8a68240bd3f538b316321554684308-1024-1024.jpg"}
 ]
 const ItemListContainer = () => {
     const [productos,setProductos] = useState([])
@@ -21,7 +21,7 @@ const ItemListContainer = () => {
         const mock_async = new Promise ((resolver)=>{
             setTimeout(()=>{
                 resolver(productosIniciales)
-            },2000)
+            },200)
         })
 
         if(id){

@@ -49,3 +49,20 @@ body nav div{
     color: saddlebrown;
 }
 
+.itemContainer{
+    display:inline-flex;
+    padding-left: 20px;
+    
+    
+}
+
+.foto{
+    height: 300px;
+    width: 200px;
+    padding-left: 40px;
+}
+
+.logo{
+    height: 200px;
+    width: 200px;
+}
