@@ -5,13 +5,18 @@ import { ItemCount } from "./components/ItemCount"
 import ItemListContainer from "./components/ItemListContainer";
 import { useState } from "react";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { BrowserRouter , Route } from "react-router-dom";
+import { BrowserRouter , Route , Switch } from "react-router-dom";
 import ItemDetail from "./components/ItemDetail";
+import Cart from "./components/Cart";
+import CartContext from "./context/CartContext";
 
 
 
 
 const App = () => {
+
+    const [carrito, setCarrito] = useState([]);
+
     return(
         <BrowserRouter>
         
@@ -19,12 +24,16 @@ const App = () => {
         <header>
             <NavBar />
         </header>
+        <CartContext.Provider value={{carrito, setCarrito}} >
+
+        <Switch>
         <Route path="/" component={ItemListContainer} exact />
         <Route path="/Catalogo/:id" component={ItemListContainer}  />
-        <Route path="/cart" component="" />
+        <Route path="/cart" component={Cart} />
         <Route path="/item/:id" component={ItemDetailContainer} />
-        
-        
+        </Switch>
+
+        </CartContext.Provider>
         
         </>
         

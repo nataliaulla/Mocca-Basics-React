@@ -54,12 +54,15 @@ body nav div{
     padding-left: 20px;
     
     
+    
 }
 
 .foto{
     height: 300px;
     width: 200px;
-    padding-left: 40px;
+    margin-left: 20px;
+    
+   
 }
 
 .logo{

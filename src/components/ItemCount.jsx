@@ -22,7 +22,7 @@ const ItemCount = ({onAdd}) => {
             <span className="valor">{valor}</span>
             <a href="#as" className="btn btn-light" onClick={handleSubstract} >-</a>
           </div>
-          <a className="btn btn-light mt-3" onClick={() => onAdd(valor)}>Agregar!</a> 
+          <a className="btn btn-light mt-3" onClick={() => onAdd(valor)}>Agregar al carrito!</a> 
         </div>
             
      )

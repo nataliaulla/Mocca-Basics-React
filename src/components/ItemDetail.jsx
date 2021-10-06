@@ -1,12 +1,20 @@
 import ItemDetailContainer from "./ItemDetailContainer"
 import { ItemCount } from "./ItemCount"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import CartContext from "../context/CartContext"
 
 const ItemDetail = ({producto}) => {
 
+    const {setCarrito} = useContext(CartContext);
     const addItem = (cantidad) => {
-        console.log(cantidad + "productos agregados al carrito")
+        const productoQuantity = {...producto, cantidad};
+        setCarrito(prev => {
+            return [...prev, productoQuantity];
+        })
     }
+
+
     return (
         <>
         <div>
@@ -18,7 +26,7 @@ const ItemDetail = ({producto}) => {
                      <p className="card-text">${producto.precio}</p>
                      <ItemCount onAdd={addItem} />
                      <Link to= "/cart">
-                            <a className="btn btn-light mt-3" >Finalizar compra!</a>
+                            <a className="btn btn-light mt-3" >Ver Carrito!</a>
                     </Link>
 
                 </div>
