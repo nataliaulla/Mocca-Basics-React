@@ -18,13 +18,15 @@ const App = () => {
     const [carrito, setCarrito] = useState([]);
 
     return(
+    <>
         <BrowserRouter>
         
-        <>
+        
+        <CartContext.Provider value={{carrito, setCarrito}} >
         <header>
             <NavBar />
         </header>
-        <CartContext.Provider value={{carrito, setCarrito}} >
+        
 
         <Switch>
         <Route path="/" component={ItemListContainer} exact />
@@ -35,9 +37,9 @@ const App = () => {
 
         </CartContext.Provider>
         
-        </>
         
         </BrowserRouter>
+    </>
     )
 }
 
