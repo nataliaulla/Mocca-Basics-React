@@ -5,8 +5,11 @@ import { Link } from "react-router-dom"
 
 
 const Cart = () => {
-    const {carrito} = useContext(CartContext);
+    const {carrito, setCarrito} = useContext(CartContext);
     const listaDeTotales = [];
+    const handleDelete = (id) =>(
+        setCarrito(carrito.filter(producto => producto.id !==id))
+    )
 
 if (carrito.length === 0){
     return (
@@ -30,7 +33,9 @@ if (carrito.length === 0){
                 <li>
                 Producto: {producto.titulo}. 
                  Cantidad: {producto.cantidad} Precio: ${producto.precio}{""} Total: ${total}
+                 <button className="bg-red-500 active:bg-red-400 rounded px-3 py-1 inline-block m-2 text-xs" type="button" onClick= {() => handleDelete(producto.id)}> <span className="hidden lg:inline">Eliminar del carrito</span></button>
                 </li>
+            
                 );
             
             })}
