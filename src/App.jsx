@@ -9,6 +9,7 @@ import { BrowserRouter , Route , Switch } from "react-router-dom";
 import ItemDetail from "./components/ItemDetail";
 import Cart from "./components/Cart";
 import CartContext from "./context/CartContext";
+import { firestore } from "./firebase";
 
 
 
