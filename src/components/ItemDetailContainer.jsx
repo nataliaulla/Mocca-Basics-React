@@ -4,6 +4,7 @@ import { useParams } from "react-router"
 import ItemDetail from "./ItemDetail"
 import ItemList from "./ItemList"
 import ItemListContainer from "./ItemListContainer"
+import { firestore } from "../firebase"
 
 const productosIniciales = [
     {id: "1", titulo: "Camisa Milos Denim", precio: 3500, Catalogo: "Mocca", descripcion: "Camisa Denim, tipo oversize", foto: "https://www.distritomoda.com.ar/sites/default/files/styles/producto_interior/public/imagenes/enede_verano2122_1627491134.jpg?itok=VZ3e9V-M"}, 

@@ -2,6 +2,7 @@ import "./estilos.css"
 import {useEffect, useState} from "react"
 import ItemList from "./ItemList"
 import { useParams } from "react-router"
+import { firestore } from "../firebase"
 
 const productosIniciales = [
     {id: "1", titulo: "Camisa Milos Denim", precio: 3500, Catalogo: "Mocca", descripcion: "Camisa Denim, tipo oversize", foto: "https://www.distritomoda.com.ar/sites/default/files/styles/producto_interior/public/imagenes/enede_verano2122_1627491134.jpg?itok=VZ3e9V-M"}, 
@@ -18,41 +19,84 @@ const ItemListContainer = () => {
     
 
     useEffect(()=>{
-        const mock_async = new Promise ((resolver)=>{
-            setTimeout(()=>{
-                resolver(productosIniciales)
-            },200)
-        })
 
-        if(id){
-            mock_async.then(data=>{
-                setProductos(data.filter(item=>item.Catalogo===id))
+        const db = firestore
+
+        const collection = db.collection("ItemCollection")
+
+        if(id === "Mocca"){
+            collection
+            .where("catalogo", "==", "Mocca")
+            .get()
+            .then((results) => {
+                const data = results.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setProductos(data)
             })
+        }else if (id === "Sale"){
+            collection
+            .where("catalogo", "===", "Sale")
+            .get()
+            .then((results) => {
+                const data = results.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setProductos(data)
+            })
+
         }else{
-            mock_async
-            .then((resultado)=>{
-                setProductos(resultado)
-    
-            })  
+            collection
+            .get()
+            .then((results) => {
+                const data = results.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+              setProductos(data)  
+            })
+            
         }
+    },[id])
+
+
+        //const mock_async = new Promise ((resolver)=>{
+            //setTimeout(()=>{
+               // resolver(productosIniciales)
+            //},200)
+        //})
+
+        //if(id){
+          //  mock_async.then(data=>{
+            //    setProductos(data.filter(item=>item.Catalogo===id))
+            //})
+        //}else{
+          //  mock_async
+            //.then((resultado)=>{
+              //  setProductos(resultado)
+    
+            //})  
+        //}
 
        
-    })
+    //})
 
-    if(productos.length > 0){
+    //if(productos.length > 0){
         
     return (
        <> 
         <ItemList productos={productos} />
     </>
      )
-    }else{
-        return(
-            <>
-            <p>Cargando...</p>
-            </>
-        )
-    }
-}
+    }//else{
+       // return(
+         //   <>
+           // <p>Cargando...</p>
+           // </>
+       // )
+   // }
+
 
 export default ItemListContainer
