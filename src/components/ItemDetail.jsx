@@ -26,7 +26,7 @@ const ItemDetail = ({producto}) => {
                      <p className="card-text">${producto.precio}</p>
                      <ItemCount onAdd={addItem} />
                      <Link to= "/cart">
-                            <a className="btn btn-light mt-3" >Ver Carrito!</a>
+                            <span className="btn btn-light mt-3" >Ver Carrito!</span>
                     </Link>
 
                 </div>

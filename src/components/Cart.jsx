@@ -2,6 +2,11 @@ import React from "react";
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
 import { Link } from "react-router-dom"
+import { firestore } from "../firebase";
+import { useEffect } from "react";
+import Form from "./Form";
+
+
 
 
 const Cart = () => {
@@ -11,12 +16,42 @@ const Cart = () => {
         setCarrito(carrito.filter(producto => producto.id !==id))
     )
 
+
+
+    const procesarCompra = (nombre,telefono,email) => {
+        console.log("Procesando compra")
+        console.log(nombre,telefono,email)
+        
+    }
+    useEffect(()=>{
+        const db = firestore
+      const coleccion = db.collection("ordenes")
+        const nueva_orden = {
+            buyer : {
+                nombre : "Natalia",
+                telefono : "123456789",
+                email : "email@email.com"
+    },
+            items : [],
+            total : 10
+      }
+        const consulta = coleccion.add(nueva_orden)
+        consulta
+            .then(resultado=>{
+                console.log(resultado.id)
+         })
+            .catch(err=>{
+                console.log(err)
+            })
+        
+    })
+
 if (carrito.length === 0){
     return (
         <div>
             <p>No hay productos en el carrito!</p>
             <Link to= "/">
-            <a className="btn btn-light mt-3" >Volver al Home</a>
+            <span className="btn btn-light mt-3" >Volver al Home</span>
             </Link>
         </div>
     )
@@ -42,6 +77,7 @@ if (carrito.length === 0){
         
         </ul>
         <h2>Total compra: ${listaDeTotales.reduce((prev, next) => prev + next)}</h2>
+        <Form onSubmit={procesarCompra}/>
         </>
     )
 }

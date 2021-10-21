@@ -17,22 +17,23 @@ useEffect(()=>{
         const db = firestore
         const ItemCollection = db.collection("productos")
         
-        if(id === "Mocca"){
+        if(id == "Mocca"){
             ItemCollection
-            .where("Catalogo", "==", "Mocca")
+            .where("Catalogo", "==", id)
             .get()
             .then((results) => {
                 const data = results.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data()
                 }));
+                console.log(data)
                 setProductos(data)
             })
         .catch(err => console.log(err))
 
-        }else if(id === "Sale"){
+        }else if(id == "Sale"){
             ItemCollection
-            .where("Catalogo", "==", "Sale")
+            .where("Catalogo", "==", id)
             .get()
             .then((results) => {
                 const data = results.docs.map((doc) => ({
