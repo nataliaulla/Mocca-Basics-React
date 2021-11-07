@@ -7,17 +7,14 @@ import { useEffect } from "react";
 import Form from "./Form";
 
 
-
-
 const Cart = () => {
     const {carrito, setCarrito} = useContext(CartContext);
     const listaDeTotales = [];
     const handleDelete = (id) =>(
         setCarrito(carrito.filter(producto => producto.id !==id))
     )
-
-
-
+    
+    
     const procesarCompra = (nombre,telefono,email) => {
         console.log("Procesando compra")
         console.log(nombre,telefono,email)
@@ -77,6 +74,7 @@ if (carrito.length === 0){
         
         </ul>
         <h2>Total compra: ${listaDeTotales.reduce((prev, next) => prev + next)}</h2>
+        <h3>Finalizar compra:</h3>
         <Form onSubmit={procesarCompra}/>
         </>
     )
